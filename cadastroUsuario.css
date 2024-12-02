@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: #2F2E41;
+}
+
+.conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+input {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 1px;
+    width: 350px;
+    height: 40px;
+    background: #ffffff;
+    border: 2px solid rgba(128, 152, 249, 0.7);
+    border-radius: 10px;
+    color: #000;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder {
+    color: #666;
+}
+
+input:focus {
+    border-color: #6172F3;
+    box-shadow: 0 0 0 4px rgba(97, 114, 243, 0.3);
+}
+
+input:-webkit-autofill {
+    background: #ffffff !important;
+    color: #000 !important;
+}
+
+.conteudo-principal-titulo {
+    font-family: 'Righteous', cursive;
+    color: #6172F3;
+    font-weight: 300;
+    font-size: 45px;
+    margin-top: 100px;
+    display: flex;
+    padding: 10px;
+}
+
+.conteudo-imagem {
+    border-radius: 28px;
+    background-color: #6172F3;
+    height: 100vh;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem-principal {
+    max-width: 100%;
+    padding: 10px;
+    height: 70%;
+}
+
+.botao-principal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+    width: 350px;
+    height: 40px;
+    background: #8098F9;
+    border-radius: 10px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    border: 2px solid transparent;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+}
+
+.botao-principal:active {
+    border-color: #6172F3;
+    box-shadow: 0 0 0 4px rgba(97, 114, 243, 0.3);
+}
+
+@media (max-width: 771px) {
+    .conteudo {
+        flex-direction: column;
+        align-items: center;
+    }
+    .conteudo-principal-titulo {
+        font-size: 30px;
+        text-align: center
+    
+    }
+
+    .conteudo-imagem {
+        display: none;
+    }
+
+    .formulario {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    input, .botao-principal {
+        width: 100%;
+    }
+}

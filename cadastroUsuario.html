@@ -1,0 +1,105 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" href="cadastroUsuario.css" />
+    <script>
+      async function cadastrarUsuario(event) {
+        event.preventDefault(); // Impede o envio normal do formulário
+
+        // Captura os dados do formulário
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const senha = document.getElementById('senha').value;
+
+        // Validação básica
+        if (!nome || !email || !senha) {
+          alert('Por favor, preencha todos os campos!');
+          return;
+        }
+
+        // Envia os dados para a API
+        const response = await fetch(
+          'http://127.0.0.1:8000/backend/api/acesso/cadastro/',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              nome: nome,
+              email: email,
+              password: senha,
+            }),
+          }
+        );
+
+        // Verifica a resposta da API
+        if (response.ok) {
+          const data = await response.json();
+          const token = data.token;
+          alert('Usuário cadastrado com sucesso!');
+          // Redireciona para a página home ou onde preferir
+          window.location.href = 'home.html';
+        } else {
+          const errorData = await response.json();
+          alert(errorData.error || 'Ocorreu um erro ao cadastrar o usuário.');
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <section class="conteudo">
+        <div class="formulario">
+          <h1 class="conteudo-principal-titulo">Criar uma conta:</h1>
+
+          <form id="form-cadastro" onsubmit="cadastrarUsuario(event)">
+            <!-- Campo para o nome -->
+            <input
+              placeholder="Nome"
+              type="text"
+              id="nome"
+              name="nome"
+              required
+            /><br /><br />
+
+            <!-- Campo para o e-mail -->
+            <input
+              placeholder="E-mail institucional"
+              type="email"
+              id="email"
+              name="email"
+              required
+            /><br /><br />
+
+            <!-- Campo para a senha -->
+            <input
+              placeholder="Informe uma senha"
+              type="password"
+              id="senha"
+              name="senha"
+              required
+            /><br /><br />
+
+            <!-- Botão de envio -->
+            <button class="botao-principal" type="submit">Cadastrar</button>
+          </form>
+        </div>
+
+        <div class="conteudo-imagem">
+          <img
+            class="imagem-principal"
+            src="imagens/imagem-principal.png"
+            alt=""
+          />
+        </div>
+      </section>
+    </main>
+    <script src="cadastrarUsuario.js"></script>
+  </body>
+</html>

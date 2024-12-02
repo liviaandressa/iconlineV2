@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-size: 100%;
+    background: #323238;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    background-color: #6172F3;
+    height: 30px;
+    position: fixed;
+    width: 100%;
+}
+
+.cabecalho-titulo {
+    font-family: 'Righteous', cursive;
+    color: #FFFFFF;
+    font-weight: 70;
+    font-size: 24px;
+}
+
+.cabecalho-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho-item-menu {
+    color: #FFF2E7;
+    font-family: 'Sarala', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.conteudo {
+    margin-bottom: 30px;
+    padding-top: 70px;
+}
+
+.conteudo-principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #6172F3;
+    gap: 20px;
+}
+
+.conteudo-escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+}
+
+.conteudo-principal-titulo {
+    font-family: 'Righteous', cursive;
+    color: #6172F3;
+    font-weight: 300;
+    font-size: 45px;
+    margin-top: 100px;
+}
+
+.conteudo-principal-subtitulo {
+    font-family: 'Sarala', sans-serif;
+    color: #F5F8FF;
+    font-size: 17px;
+    font-weight: 230;
+    margin: 10px 100px 100px 10px;
+}
+
+.imagem-principal {
+    margin-top: 100px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.imagem-principal img {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+}
+
+.imagem-ondaHome {
+    margin-top: 20px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.rodape {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.rodape-logo {
+    height: 48px;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer-titulo {
+    font-family: 'Righteous', cursive;
+    color: #6172F3;
+    font-weight: 70;
+    font-size: 24px;
+}
+
+ol {
+    list-style-type: none;
+    font-family: 'Righteous', cursive;
+    color: #FFF2E7;
+}
+
+li {
+    padding-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .conteudo-principal {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .imagem-principal img {
+        max-width: 80%;
+    }
+
+    .conteudo-principal-titulo {
+        font-size: 30px;
+    }
+
+    .conteudo-principal-subtitulo {
+        font-size: 15px;
+        margin: 10px 0;
+        text-align: center;
+    }
+    .imagem-ondaHome img {
+        width: 100%;
+    }
+}
+
+
+/* Página Home*/
+.menu-horizontal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    background-color: #6172F3;
+    height: 30px;
+    position: fixed;
+    width: 100%;
+  
+}
+
+.filtro-conteudo{
+    background-color: #656A73;
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    gap: 230px;
+    justify-content: center;
+
+}
+
+.item-filtro{
+    color: #F5F8FF;
+    font-family: 'Sarala', sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+    position: relative;
+
+    
+}
+
+/** Modais dos filtros na página home */
+.modal {
+    color: black;
+    display: none;  /* Modal escondido por padrão */
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #D9D9D9; /* Sem cor de fundo */
+    padding: 10px;
+    border: 1px solid #656A73;
+    border-radius: 5px;
+    width: 600px;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    display: grid;  /* Alinha os itens em grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas de tamanho igual */
+    gap: 20px;     /* Espaçamento entre os itens */
+    text-align: center;  /* Centraliza o texto dentro das divs */
+}
+
+.item-filtro {
+    position: relative;  /* Para posicionar o modal corretamente */
+}
+
+.item-modal {
+    font-size: 13px;
+    cursor: pointer; /* Para indicar que o item é clicável */
+    color: #323238;
+    font-family: 'Open Sans', sans-serif; /* Mudando para Open Sans */
+    font-weight: 300; /* Mais fino */
+}
+
+
+.item-filtro:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Efeito de hover */
+}
+

@@ -1,0 +1,60 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrar</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function redirecionarParaHome() {
+        window.location.href = 'home.html';
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <section class="conteudo">
+        <div class="formulario">
+          <h1 class="conteudo-principal-titulo">Entrar na sua conta:</h1>
+
+          <form id="form-login">
+            <!-- Campo para o e-mail -->
+            <input
+              placeholder="E-mail institucional"
+              type="email"
+              id="email"
+              name="email"
+              required
+            /><br /><br />
+
+            <!-- Campo para a senha -->
+            <input
+              placeholder="Senha"
+              type="password"
+              id="senha"
+              name="senha"
+              required
+            /><br /><br />
+
+            <!-- Botão de envio -->
+            <button class="botao-principal" type="submit" id="botao-entrar">
+              Entrar
+            </button>
+          </form>
+        </div>
+
+        <div class="conteudo-imagem">
+          <img
+            class="imagem-principal"
+            src="imagens/imagem-principal-login.png"
+            alt=""
+          />
+        </div>
+      </section>
+    </main>
+
+    <script src="login.js"></script>
+  </body>
+</html>

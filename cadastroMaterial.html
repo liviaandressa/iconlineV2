@@ -1,0 +1,130 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cadastro de Materiais</title>
+    <link rel="stylesheet" href="cadastroMaterial.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <a class="cabecalho-titulo" href="home.html">IConline</a>
+      <nav class="cabecalho-menu">
+        <a class="cabecalho-item-menu" href="cadastroMaterial.html"
+          >Cadastrar Material</a
+        >
+        <a class="cabecalho-item-menu" href="index.html">Sair</a>
+      </nav>
+    </header>
+    <main class="conteudo">
+      <section class="form-section">
+        <h2 class="form-description">
+          Para cadastrar um novo material, é necessário que você preencha
+          algumas informações sobre o arquivo.
+        </h2>
+        <!-- Formulário atualizado -->
+        <form id="materialForm">
+          <div class="form-header">
+            <div class="form-left">
+              <div class="form-group">
+                <label for="nome">Nome do arquivo:</label>
+                <input type="text" id="nome" name="nome" />
+              </div>
+              <div class="form-group">
+                <label for="disciplina">Disciplina:</label>
+                <select id="disciplina" name="disciplina">
+                  <option value="" disabled selected>
+                    Selecione uma disciplina
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="professor">Professor:</label>
+                <select id="professor" name="professor">
+                  <option value="" disabled selected>
+                    Selecione um professor
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="semestre">Semestre:</label>
+                <input type="text" id="semestre" name="semestre" />
+              </div>
+              <div class="form-group">
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao"></textarea>
+              </div>
+            </div>
+            <div class="form-right">
+              <div class="form-group">
+                <label>Tipo:</label>
+                <div class="radio-group">
+                  <label
+                    ><input type="radio" name="tipo" value="lista" />
+                    Lista</label
+                  >
+                  <label
+                    ><input type="radio" name="tipo" value="prova" />
+                    Prova</label
+                  >
+                  <label
+                    ><input type="radio" name="tipo" value="projeto" />
+                    Projeto</label
+                  >
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Curso:</label>
+                <div class="checkbox-group">
+                  <label
+                    ><input type="checkbox" name="curso" value="1" /> Ciência da
+                    Computação</label
+                  >
+                  <label
+                    ><input type="checkbox" name="curso" value="2" /> Engenharia
+                    da Computação</label
+                  >
+                  <label
+                    ><input type="checkbox" name="curso" value="Eletivas" />
+                    Eletivas</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-buttons">
+            <div class="form-group">
+              <label for="link">Link:</label>
+              <input type="url" class="submit-link" name="link" />
+            </div>
+            <div class="form-group">
+              <input
+                type="file"
+                id="meuArquivo"
+                name="arquivo"
+                accept=".pdf,.doc,.docx,.xls,.xlsx,.jpeg,.jpg,.png"
+              />
+              <button type="button" class="buscar-btn">Buscar Arquivo</button>
+            </div>
+            <!-- Botão de Salvar -->
+            <div class="form-group">
+              <button type="submit" class="submit-btn btn btn-primary">
+                Salvar
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="cadastroMaterial.js"></script>
+  </body>
+</html>
