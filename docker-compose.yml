@@ -1,0 +1,45 @@
+services:
+  app:
+    build: Dockerfile-local
+    hostname: app
+    command:
+      - sh
+      - -c
+      - |
+        python manage.py migrate
+        python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    environment:
+      - DB_HOST=db
+    ports:
+      - 8000:8000
+    depends_on:
+      db:
+        condition: service_healthy
+    tty: true
+  db:
+    image: "postgres:16-alpine"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/data/postgres
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "postgres"]
+      interval: 5s
+      timeout: 2s
+      retries: 5
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "iconline@backend.example"
+      PGADMIN_DEFAULT_PASSWORD: "postgres"
+    ports:
+      - 15432:80
+    depends_on:
+      - db
+volumes:
+  postgres_data:

@@ -2,101 +2,116 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
     <title>Feed</title>
-    <link rel="stylesheet" href="styleHome.css" />
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header class="cabecalho">
-        <a class="cabecalho-titulo" href="home.html">IConline</a>
-        <nav class="cabecalho-menu">
-            <a class="cabecalho-item-menu" href="cadastroMaterial.html">Cadastrar Material</a>
-            <a class="cabecalho-item-menu" href="index.html">Sair</a>
-        </nav>
+      <a class="cabecalho-titulo" href="home.html">IConline</a>
+      <nav class="cabecalho-menu">
+        <a class="cabecalho-item-menu" href="cadastroMaterial.html"
+          >Cadastrar Material</a
+        >
+        <a class="cabecalho-item-menu" href="#" id="logoutLink">Sair</a>
+    </nav>
     </header>
 
     <!--Menu com os filtros-->
     <div class="filtro-conteudo">
-        <a class="item-filtro" href="home.html">Feed</a>
-        <a class="item-filtro" href="#" id="disciplinaLink">Disciplina</a>
-        <div class="modal" id="disciplinaModal">
-            <div class="modal-content">
-                <a href="disciplinaSelecionada.html" class="item-modal">
-                    <h3>Ciência da Computação</h3>
-                </a>
-                <a href="disciplinaSelecionada.html" class="item-modal">
-                    <h3>Engenharia de Computação</h3>
-                </a>
-            </div>
-        </div>
+      <a class="item-filtro" href="home.html">Feed</a> 
+    </nav>
+  </header>
+
+  <!--Menu com os filtros-->
+  <div class="filtro-conteudo">
+    <a class="item-filtro" href="home.html">Feed</a>
+
+    <!--Filtro de todas as listas e provas por disciplina no menu-->
+    <a class="item-filtro" href="#" id="disciplinaLink">Disciplinas</a>
+    <div class="modal" id="disciplinaModal">
+      <div class="modal-content" id="disciplinaList">
+        <!-- Aqui serão carregadas as disciplinas por curso -->
+      </div>
     </div>
 
+
+  <script src="home.js"></script>
     <!-- Botão redondo -->
     <button class="floating-button">+</button>
 
     <!-- Feed -->
     <div class="card-container">
-        <div class="posts-container">
-            <div class="post">
-                <div class="post-header">
-                    <img src="/imagens/avatar1.png" alt="Avatar">
-                    <div class="info">
-                        <span class="name">Lívia Andressa</span>
-                    </div>
-                </div>
-                <div class="post-content">
-                    <p>Oi, pessoal 👋</p>
-                    <p>Essa semana teremos uma palestra incrível sobre ciência de dados. Espero todos vocês lá!</p>
-                </div>
-                <div class="post-time">Publicado há 1h</div>
-                <div class="feedback-section">
-                    <textarea placeholder="Deixe seu feedback"></textarea>
-                    <button>Publicar</button>
-                </div>
+      <div class="posts-container">
+        <div class="post">
+          <div class="post-header">
+            <img src="/imagens/avatar1.png" alt="Avatar" />
+            <div class="info">
+              <span class="name">Lívia Andressa</span>
             </div>
-
-            <div class="post">
-                <div class="post-header">
-                    <img src="/imagens/avatar2.png" alt="Avatar">
-                    <div class="info">
-                        <span class="name">Maria Aparecida</span>
-                    </div>
-                </div>
-                <div class="post-content">
-                    <p>Fala pessoal 👋</p>
-                    <p>Leiam todo o post para entender melhor a situação!.</p>
-                    <img src="/imagens/anuncio.png" alt="Anuncio">
-                </div>
-                <div class="post-time">Publicado há 2h</div>
-                <div class="feedback-section">
-                    <textarea placeholder="Deixe seu feedback"></textarea>
-                    <button>Publicar</button>
-                </div>
-            </div>
-
-            <div class="post">
-                <div class="post-header">
-                    <img src="/imagens/avatar3.png" alt="Avatar">
-                    <div class="info">
-                        <span class="name">Lívia Maria</span>
-                    </div>
-                </div>
-                <div class="post-content">
-                    <p>Fala pessoal 👋</p>
-                    <p>Finalmente finalizei meu novo site/portfólio. Foi um baita desafio criar todo o design e codar na unha.</p>
-                </div>
-                <div class="post-time">Publicado há 2h</div>
-                <div class="feedback-section">
-                    <textarea placeholder="Deixe seu feedback"></textarea>
-                    <button>Publicar</button>
-                </div>
-            </div>
+          </div>
+          <div class="post-content">
+            <p>Oi, pessoal 👋</p>
+            <p>
+              Essa semana teremos uma palestra incrível sobre ciência de dados.
+              Espero todos vocês lá!
+            </p>
+          </div>
+          <div class="post-time">Publicado há 1h</div>
+          <div class="feedback-section">
+            <textarea placeholder="Deixe seu feedback"></textarea>
+            <button>Publicar</button>
+          </div>
         </div>
+
+        <div class="post">
+          <div class="post-header">
+            <img src="/imagens/avatar2.png" alt="Avatar" />
+            <div class="info">
+              <span class="name">Maria Aparecida</span>
+            </div>
+          </div>
+          <div class="post-content">
+            <p>Fala pessoal 👋</p>
+            <p>Leiam todo o post para entender melhor a situação!.</p>
+            <img src="/imagens/anuncio.png" alt="Anuncio" />
+          </div>
+          <div class="post-time">Publicado há 2h</div>
+          <div class="feedback-section">
+            <textarea placeholder="Deixe seu feedback"></textarea>
+            <button>Publicar</button>
+          </div>
+        </div>
+
+        <div class="post">
+          <div class="post-header">
+            <img src="/imagens/avatar3.png" alt="Avatar" />
+            <div class="info">
+              <span class="name">Lívia Maria</span>
+            </div>
+          </div>
+          <div class="post-content">
+            <p>Fala pessoal 👋</p>
+            <p>
+              Finalmente finalizei meu novo site/portfólio. Foi um baita desafio
+              criar todo o design e codar na unha.
+            </p>
+          </div>
+          <div class="post-time">Publicado há 2h</div>
+          <div class="feedback-section">
+            <textarea placeholder="Deixe seu feedback"></textarea>
+            <button>Publicar</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="Home.js"></script>
-</body>
+  </body>
 </html>
